@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-Widget MainProfilShape() {
+Widget MainProfilShape(Color color) {
   return SizedBox(
-    height: 40,
-    width: 130,
+    height: 60,
+    width: 140,
     child: Container(
-      decoration: BoxDecoration(
-          color: Colors.grey[900], borderRadius: BorderRadius.circular(10)),
+      decoration:
+          BoxDecoration(color: color, borderRadius: BorderRadius.circular(10)),
       child: SizedBox.fromSize(
         size: const Size.fromRadius(48),
         child: Row(
@@ -16,8 +16,8 @@ Widget MainProfilShape() {
               width: 3,
             ),
             SizedBox(
-              height: 35,
-              width: 35,
+              height: 45,
+              width: 45,
               child: Container(
                 decoration: BoxDecoration(
                     color: Colors.grey[800],

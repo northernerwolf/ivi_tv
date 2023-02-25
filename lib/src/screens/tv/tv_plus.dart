@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ivi_tv/src/screens/tv/components/tab_comp_tv.dart';
 import 'package:ivi_tv/src/screens/tv/tvtabs/children.dart';
 import 'package:ivi_tv/src/screens/tv/tvtabs/docmetasion.dart';
 import 'package:ivi_tv/src/screens/tv/tvtabs/entertaining.dart';
@@ -54,49 +55,13 @@ class _TvPluseScreenState extends State<TvPluseScreen>
                           indicatorColor: Colors.grey,
                           indicatorWeight: 2,
                           controller: tabController,
-                          tabs: const [
-                            Tab(
-                              child: Text(
-                                "Katigorýalar",
-                                style: TextStyle(
-                                    fontFamily: "BarlowBold", fontSize: 12),
-                              ),
-                            ),
-                            Tab(
-                              child: Text(
-                                "Brendler",
-                                style: TextStyle(
-                                    fontFamily: "BarlowBold", fontSize: 12),
-                              ),
-                            ),
-                            Tab(
-                              child: Text(
-                                "Brendler",
-                                style: TextStyle(
-                                    fontFamily: "BarlowBold", fontSize: 12),
-                              ),
-                            ),
-                            Tab(
-                              child: Text(
-                                "Brendler",
-                                style: TextStyle(
-                                    fontFamily: "BarlowBold", fontSize: 12),
-                              ),
-                            ),
-                            Tab(
-                              child: Text(
-                                "Brendler",
-                                style: TextStyle(
-                                    fontFamily: "BarlowBold", fontSize: 12),
-                              ),
-                            ),
-                            Tab(
-                              child: Text(
-                                "Brendler",
-                                style: TextStyle(
-                                    fontFamily: "BarlowBold", fontSize: 12),
-                              ),
-                            ),
+                          tabs: [
+                            CompTabTv('ТВ-каналы'),
+                            CompTabTv('ТВ-каналы'),
+                            CompTabTv('ТВ-каналы'),
+                            CompTabTv('ТВ-каналы'),
+                            CompTabTv('ТВ-каналы'),
+                            CompTabTv('ТВ-каналы'),
                           ],
                         ),
                       ),

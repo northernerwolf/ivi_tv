@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:ivi_tv/src/screens/profil/componets/card_list_comp.dart';
+import 'package:ivi_tv/src/screens/profil/componets/companets_in.dart';
 import 'package:ivi_tv/src/screens/profil/componets/message_comp.dart';
+import 'package:ivi_tv/src/screens/profil/componets/sign_out_comp.dart';
 
 import '../../../constants.dart';
 import 'componets/card_component.dart';
 import 'componets/card_componets_2.dart';
-import 'componets/sign_in.dart';
 
 class ProfilScreen extends StatefulWidget {
   const ProfilScreen({super.key});
@@ -27,16 +29,9 @@ class _ProfilScreenState extends State<ProfilScreen> {
             const SizedBox(
               height: 110,
             ),
-            Row(
-              children: [
-                SiginIn(
-                  Icons.person,
-                  'зарегистрироваться',
-                ),
-              ],
-            ),
+            ComponentsIn(),
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,7 +54,15 @@ class _ProfilScreenState extends State<ProfilScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 MessageComponets(Icons.message, 'rvwbwobbpwe'),
-                UidComponets('uid: ', '948474474747')
+                Row(
+                  children: [
+                    UidComponets('uid: ', '948474474747'),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    SignOutComp()
+                  ],
+                )
               ],
             ),
             const SizedBox(

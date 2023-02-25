@@ -7,7 +7,7 @@ import 'package:ivi_tv/src/screens/search/search.dart';
 import 'package:ivi_tv/src/screens/tv/tv_plus.dart';
 
 import '../../../constants.dart';
-import '../../components/main_profil_shape.dart';
+
 import '../../components/tab_bar_components.dart';
 
 class InitialPageNew extends StatefulWidget {
@@ -95,7 +95,7 @@ class _InitialPageNewState extends State<InitialPageNew>
                   ),
                   const Spacer(),
                   InkWell(
-                    child: MainProfilShape(),
+                    // child: MainProfilShape(),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const ProfilScreen()));

@@ -2,7 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:ivi_tv/constants.dart';
-import 'package:ivi_tv/src/components/components_mouse.dart';
+
+import 'package:ivi_tv/src/screens/initial/components/button_initial.dart';
+
+import '../../components/ivi_loga_componets.dart';
+import '../../components/main_profil_shape.dart';
+import '../catigory/catigory.dart';
+import '../myivi/my_ivi.dart';
+import '../profil/profil.dart';
+import '../search/search.dart';
+import '../tv/tv_plus.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});
@@ -12,87 +21,133 @@ class InitialScreen extends StatefulWidget {
 }
 
 class _InitialScreenState extends State<InitialScreen> {
+  int paginaAtual = 0;
+  late PageController pc;
+  @override
+  void initState() {
+    super.initState();
+    pc = PageController(initialPage: paginaAtual);
+  }
+
+  setPaginaActive(pagina) {
+    setState(() {
+      paginaAtual = pagina;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppConst.appColorBackg,
-      body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
+      body: Stack(
+        children: [
+          Expanded(
+              child: PageView(
+            controller: pc,
+            // ignore: sort_child_properties_last
+            children: const [
+              SearchScreen(),
+              MyIviScreen(),
+              CatigoryScreen(),
+              TvPluseScreen(),
+              ProfilScreen()
+            ],
+            onPageChanged: setPaginaActive,
+          )),
+          SizedBox(
+            height: 60,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(
-                    width: 80,
+                    width: 45,
                   ),
-                  SizedBox(
-                    height: 50,
-                    width: 60,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: SizedBox.fromSize(
-                        size: const Size.fromRadius(48),
-                        child: Image.asset('assets/icons/ivilogo.png',
-                            fit: BoxFit.cover),
-                      ),
-                    ),
-                  ),
+                  IviLogoComponets(),
                   const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: SingleChildScrollView(
-                        child: Container(
-                          height: 50,
-                          width: 300,
-                          decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(15),
-                            // boxShadow: const [
-                            //   BoxShadow(
-                            //       blurRadius: 3,
-                            //       spreadRadius: 5,
-                            //       color: Colors.grey)
-                            // ]
-                          ),
-                          child: buttonsUI(),
+                  Container(
+                    height: 60,
+                    width: 400,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[900],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        InkWell(
+                          child: ButtonInitial(
+                              "Поиск",
+                              paginaAtual == 0
+                                  ? Colors.red
+                                  : AppConst.buttonUnSelected),
+                          onTap: () {
+                            pc.animateToPage(0,
+                                duration: const Duration(milliseconds: 400),
+                                curve: Curves.ease);
+                          },
                         ),
-                      ),
+                        InkWell(
+                          child: ButtonInitial(
+                              "Мой Иви",
+                              paginaAtual == 1
+                                  ? Colors.red
+                                  : AppConst.buttonUnSelected),
+                          onTap: () {
+                            pc.animateToPage(1,
+                                duration: const Duration(milliseconds: 400),
+                                curve: Curves.ease);
+                          },
+                        ),
+                        InkWell(
+                          child: ButtonInitial(
+                              "Каталог",
+                              paginaAtual == 2
+                                  ? Colors.red
+                                  : AppConst.buttonUnSelected),
+                          onTap: () {
+                            pc.animateToPage(2,
+                                duration: const Duration(milliseconds: 400),
+                                curve: Curves.ease);
+                          },
+                        ),
+                        InkWell(
+                          child: ButtonInitial(
+                              "TV+",
+                              paginaAtual == 3
+                                  ? Colors.red
+                                  : AppConst.buttonUnSelected),
+                          onTap: () {
+                            pc.animateToPage(3,
+                                duration: const Duration(milliseconds: 400),
+                                curve: Curves.ease);
+                          },
+                        ),
+                      ],
                     ),
                   ),
                   const Spacer(),
-                  SizedBox(
-                    height: 50,
-                    width: 60,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: SizedBox.fromSize(
-                        size: const Size.fromRadius(48),
-                        child: Image.asset('assets/icons/ivilogo.png',
-                            fit: BoxFit.cover),
-                      ),
-                    ),
+                  InkWell(
+                    child: MainProfilShape(paginaAtual == 4
+                        ? Colors.grey
+                        : AppConst.buttonUnSelected),
+                    onTap: () {
+                      pc.animateToPage(4,
+                          duration: const Duration(milliseconds: 400),
+                          curve: Curves.ease);
+                      // Navigator.of(context).push(MaterialPageRoute(
+                      //     builder: (context) => const ProfilScreen()));
+                    },
                   ),
                   const SizedBox(
-                    width: 80,
+                    width: 50,
                   ),
                 ],
               ),
-            ],
+            ),
           ),
-        ),
-      )),
-    );
-  }
-
-  buttonsUI() {
-    return Row(
-      children: List.generate(3, (int i) {
-        return MainButton(index: i, title: 'ddd');
-      }),
+        ],
+      ),
     );
   }
 }
