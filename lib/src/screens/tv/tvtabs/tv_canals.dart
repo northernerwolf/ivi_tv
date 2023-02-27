@@ -50,7 +50,7 @@ class _TvCanalsState extends State<TvCanals> {
             ],
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           Row(
             children: [

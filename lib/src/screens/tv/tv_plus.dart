@@ -36,60 +36,62 @@ class _TvPluseScreenState extends State<TvPluseScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppConst.appColorBackg,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 70, left: 50, right: 50),
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          child: Column(
-            children: [
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: 600,
-                        child: TabBar(
-                          unselectedLabelColor: Colors.grey,
-                          labelColor: Colors.grey,
-                          indicatorColor: Colors.grey,
-                          indicatorWeight: 2,
-                          controller: tabController,
-                          tabs: [
-                            CompTabTv('ТВ-каналы'),
-                            CompTabTv('ТВ-каналы'),
-                            CompTabTv('ТВ-каналы'),
-                            CompTabTv('ТВ-каналы'),
-                            CompTabTv('ТВ-каналы'),
-                            CompTabTv('ТВ-каналы'),
-                          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 70, left: 50, right: 50),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 600,
+                          child: TabBar(
+                            unselectedLabelColor: Colors.grey,
+                            labelColor: Colors.grey,
+                            indicatorColor: Colors.grey,
+                            indicatorWeight: 2,
+                            controller: tabController,
+                            tabs: [
+                              CompTabTv('ТВ-каналы'),
+                              CompTabTv('ТВ-каналы'),
+                              CompTabTv('ТВ-каналы'),
+                              CompTabTv('ТВ-каналы'),
+                              CompTabTv('ТВ-каналы'),
+                              CompTabTv('ТВ-каналы'),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 1,
-                    color: Colors.grey,
-                  )
-                ],
-              ),
-              Expanded(
-                child: TabBarView(
-                  physics: const BouncingScrollPhysics(
-                      parent: AlwaysScrollableScrollPhysics()),
-                  controller: tabController,
-                  children: const [
-                    TvCanals(),
-                    Entertaining(),
-                    ChildrenTab(),
-                    SportsTab(),
-                    FitnesTab(),
-                    Docmentasiontab()
+                      ],
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 1,
+                      color: Colors.grey,
+                    )
                   ],
                 ),
-              ),
-            ],
+                Expanded(
+                  child: TabBarView(
+                    physics: const BouncingScrollPhysics(
+                        parent: AlwaysScrollableScrollPhysics()),
+                    controller: tabController,
+                    children: const [
+                      TvCanals(),
+                      Entertaining(),
+                      ChildrenTab(),
+                      SportsTab(),
+                      FitnesTab(),
+                      Docmentasiontab()
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

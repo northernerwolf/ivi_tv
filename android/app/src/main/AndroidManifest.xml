@@ -1,5 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ivi_tv">
+   <uses-feature android:name="android.software.leanback"
+       android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen"
+             android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET"/>         
    <application
         android:label="ivi tv"
         android:name="${applicationName}"

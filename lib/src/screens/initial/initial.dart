@@ -135,8 +135,6 @@ class _InitialScreenState extends State<InitialScreen> {
                       pc.animateToPage(4,
                           duration: const Duration(milliseconds: 400),
                           curve: Curves.ease);
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => const ProfilScreen()));
                     },
                   ),
                   const SizedBox(
