@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-Widget CardComponents(String title, title1) {
+Widget CardComponents(String title, title1, title2) {
   return Container(
     height: 100,
     width: 600,
@@ -11,11 +11,29 @@ Widget CardComponents(String title, title1) {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
+          Column(
             children: [
-              Text(
-                title,
-                style: const TextStyle(color: Colors.white, fontSize: 12),
+              Row(
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Text(
+                    title2,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

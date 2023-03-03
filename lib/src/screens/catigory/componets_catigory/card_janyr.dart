@@ -9,7 +9,10 @@ Widget CardJanyrListCopm(IconData icon, String title) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(icon),
+        Icon(
+          icon,
+          color: Colors.red[600],
+        ),
         const SizedBox(
           height: 10,
         ),

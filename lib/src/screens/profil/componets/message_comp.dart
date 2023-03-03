@@ -37,20 +37,23 @@ Widget MessageComponets(IconData icon, String title) {
 
 // ignore: non_constant_identifier_names
 Widget UidComponets(String title, String integer) {
-  return Row(
-    children: [
-      SizedBox(
-        child: Text(
-          title,
-          style: const TextStyle(color: Colors.white, fontSize: 12),
+  return Padding(
+    padding: const EdgeInsets.only(top: 8.0),
+    child: Row(
+      children: [
+        SizedBox(
+          child: Text(
+            title,
+            style: const TextStyle(color: Colors.white, fontSize: 12),
+          ),
         ),
-      ),
-      SizedBox(
-        child: Text(
-          integer,
-          style: const TextStyle(color: Colors.white, fontSize: 12),
+        SizedBox(
+          child: Text(
+            integer,
+            style: const TextStyle(color: Colors.white, fontSize: 12),
+          ),
         ),
-      ),
-    ],
+      ],
+    ),
   );
 }

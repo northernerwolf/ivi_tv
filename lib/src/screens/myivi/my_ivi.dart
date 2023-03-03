@@ -2,6 +2,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:ivi_tv/src/screens/myivi/componets/card_comp_my_ivi.dart';
 
 import '../../../constants.dart';
 import '../catigory/componets_catigory/card_movies.dart';
@@ -66,6 +67,15 @@ class _MyIviScreenState extends State<MyIviScreen> {
                         'Самое интересное',
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      CardCompMyIvi(Image.asset('assets/images/topgun.png',
+                          fit: BoxFit.cover))
                     ],
                   ),
                   const SizedBox(

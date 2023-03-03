@@ -3,14 +3,9 @@ import 'package:ivi_tv/src/screens/tv/components/card_canals.dart';
 
 import '../../../../constants.dart';
 
-class TvCanals extends StatefulWidget {
+class TvCanals extends StatelessWidget {
   const TvCanals({super.key});
 
-  @override
-  State<TvCanals> createState() => _TvCanalsState();
-}
-
-class _TvCanalsState extends State<TvCanals> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

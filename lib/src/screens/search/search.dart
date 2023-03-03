@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ivi_tv/src/screens/search/components/button_clean.dart';
 
 import '../../../constants.dart';
 
-class SearchScreen extends StatefulWidget {
+class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
-  @override
-  State<SearchScreen> createState() => _SearchScreenState();
-}
-
-class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,16 +16,25 @@ class _SearchScreenState extends State<SearchScreen> {
             child: Column(
               children: [
                 Center(
-                  child: SizedBox(
-                    width: 450,
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                          labelStyle: TextStyle(
-                            color: Colors.grey,
-                          ),
-                          labelText: 'Enter Text',
-                          fillColor: Colors.white),
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 450,
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                              labelStyle: TextStyle(
+                                color: Colors.grey,
+                              ),
+                              labelText: 'Enter Text',
+                              fillColor: Colors.white),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      ButtonClean('Очистить')
+                    ],
                   ),
                 ),
               ],

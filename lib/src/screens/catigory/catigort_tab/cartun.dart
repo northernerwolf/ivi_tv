@@ -5,14 +5,9 @@ import 'package:ivi_tv/src/widget_companents/movi_view.dart';
 import '../../../../constants.dart';
 import '../componets_catigory/card_janyr.dart';
 
-class CartunsScreen extends StatefulWidget {
+class CartunsScreen extends StatelessWidget {
   const CartunsScreen({super.key});
 
-  @override
-  State<CartunsScreen> createState() => _CartunsScreenState();
-}
-
-class _CartunsScreenState extends State<CartunsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

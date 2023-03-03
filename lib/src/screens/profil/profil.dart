@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'package:ivi_tv/src/screens/profil/componets/card_list_comp.dart';
 import 'package:ivi_tv/src/screens/profil/componets/companets_in.dart';
 import 'package:ivi_tv/src/screens/profil/componets/message_comp.dart';
 import 'package:ivi_tv/src/screens/profil/componets/sign_out_comp.dart';
 
 import '../../../constants.dart';
+import '../catigory/componets_catigory/card_janyr.dart';
 import 'componets/card_component.dart';
 import 'componets/card_componets_2.dart';
 
-class ProfilScreen extends StatefulWidget {
+class ProfilScreen extends StatelessWidget {
   const ProfilScreen({super.key});
 
-  @override
-  State<ProfilScreen> createState() => _ProfilScreenState();
-}
-
-class _ProfilScreenState extends State<ProfilScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +31,7 @@ class _ProfilScreenState extends State<ProfilScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CardComponents('fdeff', 'fefefefe'),
+                CardComponents('Потписки', 'укмуумтху', 'Есть активные'),
                 const SizedBox(
                   width: 20,
                 ),
@@ -47,7 +42,9 @@ class _ProfilScreenState extends State<ProfilScreen> {
               height: 20,
             ),
             Row(
-              children: [CardListComp(Icons.tv, 'bwgowgwbguog')],
+              children: [
+                CardJanyrListCopm(Icons.settings, 'Детские'),
+              ],
             ),
             const Spacer(),
             Row(
