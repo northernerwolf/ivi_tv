@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ivi_tv/constants.dart';
 
 // ignore: non_constant_identifier_names
 Widget MessageComponets(IconData icon, String title) {
@@ -7,10 +8,12 @@ Widget MessageComponets(IconData icon, String title) {
     width: 250,
     child: Container(
       decoration: BoxDecoration(
-          color: Colors.grey[800], borderRadius: BorderRadius.circular(8)),
+          color: AppConst.cardColorBacg,
+          borderRadius: BorderRadius.circular(8)),
       child: SizedBox.fromSize(
         size: const Size.fromRadius(48),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(
               width: 8,
@@ -25,7 +28,10 @@ Widget MessageComponets(IconData icon, String title) {
             SizedBox(
               child: Text(
                 title,
-                style: const TextStyle(color: Colors.white, fontSize: 12),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold),
               ),
             )
           ],

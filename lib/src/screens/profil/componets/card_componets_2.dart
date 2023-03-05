@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ivi_tv/constants.dart';
 
 // ignore: non_constant_identifier_names
 Widget CardComponets2(String title, title1) {
   return Container(
     height: 100,
-    width: 240,
-    color: Colors.grey[800],
+    width: 270,
+    color: AppConst.cardColorBacg,
     child: Padding(
       padding: const EdgeInsets.all(15.0),
       child: Column(
@@ -15,7 +16,10 @@ Widget CardComponets2(String title, title1) {
             children: [
               Text(
                 title,
-                style: const TextStyle(color: Colors.white, fontSize: 12),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -23,7 +27,7 @@ Widget CardComponets2(String title, title1) {
             children: [
               Text(
                 title1,
-                style: const TextStyle(color: Colors.white, fontSize: 12),
+                style: const TextStyle(color: Colors.white, fontSize: 14),
               ),
             ],
           )

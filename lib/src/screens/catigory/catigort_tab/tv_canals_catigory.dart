@@ -8,7 +8,7 @@ class TvCanalsCatigory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: AppConst.appColorBackg,
+      backgroundColor: AppConst.settingsColorBacg,
     );
   }
 }

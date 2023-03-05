@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ivi_tv/constants.dart';
 
 // ignore: non_constant_identifier_names
 Widget SiginIn(IconData icon, String title) {
@@ -7,7 +8,8 @@ Widget SiginIn(IconData icon, String title) {
     width: 200,
     child: Container(
       decoration: BoxDecoration(
-          color: Colors.grey[800], borderRadius: BorderRadius.circular(8)),
+          color: AppConst.cardColorBacg,
+          borderRadius: BorderRadius.circular(8)),
       child: SizedBox.fromSize(
         size: const Size.fromRadius(48),
         child: Row(
@@ -25,7 +27,10 @@ Widget SiginIn(IconData icon, String title) {
             SizedBox(
               child: Text(
                 title,
-                style: const TextStyle(color: Colors.white, fontSize: 12),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
               ),
             )
           ],

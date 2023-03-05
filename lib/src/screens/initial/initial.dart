@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:ivi_tv/constants.dart';
 
 import 'package:ivi_tv/src/screens/initial/components/button_initial.dart';
+import 'package:ivi_tv/src/screens/initial/components/button_initial_search.dart';
 
 import '../../components/ivi_loga_componets.dart';
 import '../../components/main_profil_shape.dart';
@@ -11,7 +12,6 @@ import '../catigory/catigory.dart';
 import '../myivi/my_ivi.dart';
 import '../profil/profil.dart';
 import '../search/search.dart';
-import '../tv/tv_plus.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});
@@ -38,7 +38,7 @@ class _InitialScreenState extends State<InitialScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppConst.appColorBackg,
+      backgroundColor: AppConst.settingsColorBacg,
       body: Stack(
         children: [
           Expanded(
@@ -49,7 +49,6 @@ class _InitialScreenState extends State<InitialScreen> {
               SearchScreen(),
               MyIviScreen(),
               CatigoryScreen(),
-              TvPluseScreen(),
               ProfilScreen()
             ],
             onPageChanged: setPaginaActive,
@@ -68,7 +67,7 @@ class _InitialScreenState extends State<InitialScreen> {
                   const Spacer(),
                   Container(
                     height: 60,
-                    width: 400,
+                    width: 330,
                     decoration: BoxDecoration(
                       color: Colors.grey[900],
                       borderRadius: BorderRadius.circular(10),
@@ -76,7 +75,8 @@ class _InitialScreenState extends State<InitialScreen> {
                     child: Row(
                       children: [
                         InkWell(
-                          child: ButtonInitial(
+                          child: ButtonInitialSearch(
+                              Icons.search,
                               "Поиск",
                               paginaAtual == 0
                                   ? Colors.red
@@ -111,28 +111,16 @@ class _InitialScreenState extends State<InitialScreen> {
                                 curve: Curves.ease);
                           },
                         ),
-                        InkWell(
-                          child: ButtonInitial(
-                              "TV+",
-                              paginaAtual == 3
-                                  ? Colors.red
-                                  : AppConst.buttonUnSelected),
-                          onTap: () {
-                            pc.animateToPage(3,
-                                duration: const Duration(milliseconds: 400),
-                                curve: Curves.ease);
-                          },
-                        ),
                       ],
                     ),
                   ),
                   const Spacer(),
                   InkWell(
-                    child: MainProfilShape(paginaAtual == 4
+                    child: MainProfilShape(paginaAtual == 3
                         ? Colors.grey
                         : AppConst.buttonUnSelected),
                     onTap: () {
-                      pc.animateToPage(4,
+                      pc.animateToPage(3,
                           duration: const Duration(milliseconds: 400),
                           curve: Curves.ease);
                     },

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-Widget AccountComp(String title) {
+Widget AccountComp(String title, Image image) {
   return Column(
     children: [
       SizedBox(
         height: 50,
         width: 50,
-        child: Image.asset('assets/icons/ivilogo.png'),
+        child: image,
       ),
       const SizedBox(
         height: 5,

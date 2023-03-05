@@ -22,7 +22,8 @@ Widget AccountCompAdd(String title) {
           title,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(
+              color: Colors.white, fontWeight: FontWeight.normal),
         ),
       )
     ],

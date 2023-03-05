@@ -7,8 +7,8 @@ Widget CardMovies(String title, name, cost, Image image) {
       Stack(
         children: [
           SizedBox(
-            height: 140,
-            width: 100,
+            height: 200,
+            width: 155,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(0),
               child: SizedBox.fromSize(
@@ -20,12 +20,12 @@ Widget CardMovies(String title, name, cost, Image image) {
           Row(
             children: [
               const SizedBox(
-                width: 70,
+                width: 123,
               ),
               Column(
                 children: [
                   const SizedBox(
-                    height: 120,
+                    height: 180,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 5),

@@ -6,7 +6,7 @@ Widget ButtonInitial(String title, Color color) {
     padding: const EdgeInsets.only(left: 4, right: 4),
     child: Container(
         height: 45,
-        width: 92,
+        width: 102,
         decoration: BoxDecoration(
             color: color, borderRadius: BorderRadius.circular(10)),
         child: Center(

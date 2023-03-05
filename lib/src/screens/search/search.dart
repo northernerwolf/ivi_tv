@@ -9,7 +9,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppConst.appColorBackg,
+        backgroundColor: AppConst.settingsColorBacg,
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 100, left: 50, right: 50),

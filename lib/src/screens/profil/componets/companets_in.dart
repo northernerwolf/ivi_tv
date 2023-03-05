@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:ivi_tv/constants.dart';
 import 'package:ivi_tv/src/screens/profil/componets/sign_in.dart';
 
 import 'account_components.dart';
 import 'account_components_add.dart';
 
 // ignore: non_constant_identifier_names
-Widget ComponentsIn() {
+Widget ComponentsIn(InkWell page1, page2) {
   return Container(
     height: 100,
-    color: Colors.grey[900],
+    color: AppConst.addAccount,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -20,9 +21,12 @@ Widget ComponentsIn() {
             const SizedBox(
               width: 80,
               child: Text(
-                'Wybor Profil',
+                'Выбор профиля',
                 maxLines: 2,
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(
@@ -31,7 +35,13 @@ Widget ComponentsIn() {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AccountComp('Guwanch'),
+                InkWell(
+                  child: AccountComp(
+                      'Guwanch', Image.asset('assets/icons/ivilogo.png')),
+                  onTap: () {
+                    page1;
+                  },
+                ),
               ],
             ),
             const SizedBox(
@@ -40,7 +50,22 @@ Widget ComponentsIn() {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AccountCompAdd('Nowy'),
+                InkWell(
+                  child: AccountComp('Дети',
+                      Image.asset('assets/images/tri.jpg', fit: BoxFit.cover)),
+                  onTap: () {
+                    page2;
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AccountCompAdd('Новый'),
               ],
             )
           ],
@@ -49,7 +74,7 @@ Widget ComponentsIn() {
           children: [
             SiginIn(
               Icons.edit,
-              'зарегистрироваться',
+              'Зарегистрироваться',
             ),
             const SizedBox(
               width: 20,
