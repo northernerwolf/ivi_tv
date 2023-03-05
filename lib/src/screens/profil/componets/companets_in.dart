@@ -37,7 +37,7 @@ Widget ComponentsIn(InkWell page1, page2) {
               children: [
                 InkWell(
                   child: AccountComp(
-                      'Guwanch', Image.asset('assets/icons/ivilogo.png')),
+                      'guwanch', Image.asset('assets/icons/ivilogo.png')),
                   onTap: () {
                     page1;
                   },

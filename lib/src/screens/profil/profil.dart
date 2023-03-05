@@ -73,9 +73,12 @@ class _ProfilScreenState extends State<ProfilScreen> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          InkWell(
-                            child: AccountComp('guwanch',
-                                Image.asset('assets/icons/ivilogo.png')),
+                          GestureDetector(
+                            child: AnimatedContainer(
+                              duration: const Duration(milliseconds: 200),
+                              child: AccountComp('guwanch',
+                                  Image.asset('assets/icons/ivilogo.png')),
+                            ),
                             onTap: () {
                               pc.animateToPage(0,
                                   duration: const Duration(milliseconds: 400),
