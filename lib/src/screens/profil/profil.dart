@@ -76,8 +76,10 @@ class _ProfilScreenState extends State<ProfilScreen> {
                           GestureDetector(
                             child: AnimatedContainer(
                               duration: const Duration(milliseconds: 200),
-                              child: AccountComp('guwanch',
-                                  Image.asset('assets/icons/ivilogo.png')),
+                              child: AccountComp(
+                                  'guwanch',
+                                  Image.asset('assets/icons/ivilogo.png'),
+                                  paginaAtual == 0 ? Colors.red : Colors.white),
                             ),
                             onTap: () {
                               pc.animateToPage(0,
@@ -97,7 +99,8 @@ class _ProfilScreenState extends State<ProfilScreen> {
                             child: AccountComp(
                                 'Дети',
                                 Image.asset('assets/images/tri.jpg',
-                                    fit: BoxFit.cover)),
+                                    fit: BoxFit.cover),
+                                paginaAtual == 1 ? Colors.red : Colors.white),
                             onTap: () {
                               pc.animateToPage(1,
                                   duration: const Duration(milliseconds: 400),

@@ -9,7 +9,7 @@ Widget AboutMovi() {
           SizedBox(
             width: 350,
             child: Text(
-              'wevh wvwv wv wkvkw vwkv w v w wkvkwk wkw vkwv wvkwvwv wv wv vwvwovewovwovwev bo wvwo vwvwv',
+              'Все фильмы доступны для просмотра в онлайне, ничего скачивать не нужно. Видео оптимизировано для мобильных телефонов. При использовании рекомендуется подключиться к Wi-Fi',
               style: TextStyle(fontSize: 16, color: Colors.white),
             ),
           ),
@@ -21,9 +21,9 @@ Widget AboutMovi() {
       Row(
         children: const [
           SizedBox(
-            width: 50,
+            width: 60,
             child: Text(
-              'Akteri:',
+              'Акери: ',
               style: TextStyle(fontSize: 16, color: Colors.white),
             ),
           ),
@@ -39,17 +39,17 @@ Widget AboutMovi() {
       Row(
         children: const [
           SizedBox(
-            width: 70,
+            width: 100,
             child: Text(
-              'Rejissery:',
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              'Режиссры:',
+              style: TextStyle(fontSize: 18, color: Colors.white),
             ),
           ),
           SizedBox(
             width: 200,
             child: Text(
               'Tom Cruse',
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              style: TextStyle(fontSize: 18, color: Colors.white),
             ),
           ),
         ],
@@ -60,10 +60,13 @@ Widget AboutMovi() {
       Row(
         children: const [
           SizedBox(
-            width: 70,
+            width: 80,
             child: Text(
-              'Treyler',
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              'ТРЕЙЛЕР',
+              style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           Icon(

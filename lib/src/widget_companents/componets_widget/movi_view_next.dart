@@ -1,44 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:ivi_tv/constants.dart';
 
 // ignore: non_constant_identifier_names
 Widget MoviViewNext() {
   return SizedBox(
-    height: 45,
-    width: 200,
+    height: 35,
+    width: 110,
     child: Container(
       decoration: BoxDecoration(
-          color: Colors.grey[400], borderRadius: BorderRadius.circular(8)),
+          color: Colors.red, borderRadius: BorderRadius.circular(8)),
       child: SizedBox.fromSize(
         size: const Size.fromRadius(48),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 8, left: 10),
-              child: Row(
-                children: const [
-                  SizedBox(
-                    child: Text(
-                      'Prodoljit prosmoter',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                  )
-                ],
-              ),
+        child: const Center(
+          child: SizedBox(
+            child: Text(
+              textAlign: TextAlign.center,
+              'Смотреть',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 4, left: 10),
-              child: Row(
-                children: const [
-                  SizedBox(
-                    child: Text(
-                      'Seiya 1 Sezon 1',
-                      style: TextStyle(color: Colors.white, fontSize: 10),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     ),
@@ -48,11 +31,11 @@ Widget MoviViewNext() {
 // ignore: non_constant_identifier_names
 Widget ButtonFavorite() {
   return SizedBox(
-    height: 45,
-    width: 50,
+    height: 35,
+    width: 45,
     child: Container(
       decoration: BoxDecoration(
-          color: Colors.grey[400], borderRadius: BorderRadius.circular(8)),
+          color: AppConst.moviCard, borderRadius: BorderRadius.circular(8)),
       child: SizedBox.fromSize(
         size: const Size.fromRadius(48),
         child: Row(

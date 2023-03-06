@@ -4,8 +4,28 @@ import '../catigory/componets_catigory/card_janyr.dart';
 import 'componets/card_component.dart';
 import 'componets/card_componets_2.dart';
 
-class MyProfilUser extends StatelessWidget {
+class MyProfilUser extends StatefulWidget {
   const MyProfilUser({super.key});
+
+  @override
+  State<MyProfilUser> createState() => _MyProfilUserState();
+}
+
+class _MyProfilUserState extends State<MyProfilUser> {
+  late double _width = 270;
+  late double _height = 100;
+
+  void updateState() {
+    if (_height == 100) {
+      setState(() {
+        _height = 130;
+        _width = 300;
+      });
+    } else {
+      _height = 100;
+      _width = 270;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +35,18 @@ class MyProfilUser extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CardComponents('Потписки', 'Управлять', 'Есть активные'),
+            InkWell(
+                onTap: () {
+                  updateState();
+                },
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
+                  child: CardComponents(
+                    'Потписки',
+                    'Управлять',
+                    'Есть активные',
+                  ),
+                )),
             const SizedBox(
               width: 20,
             ),

@@ -23,18 +23,27 @@ class _MoviViewScreenState extends State<MoviViewScreen> {
               fit: BoxFit.cover,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: const Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              ),
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
             ),
           ),
+          // Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: InkWell(
+          //     onTap: () {
+          //       Navigator.of(context).pop();
+          //     },
+          //     child: const Icon(
+          //       Icons.arrow_back,
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // ),
           TitleMovi(),
         ]),
       ),

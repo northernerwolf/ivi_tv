@@ -31,18 +31,18 @@ Widget CardCompMyIvi(Image image) {
           child: Column(
             children: const [
               SizedBox(
-                width: 80,
+                width: 100,
                 child: Text(
-                  'Bla Bla bla wevnowvwovevpb ',
+                  'Артур и дети круг',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
               ),
               SizedBox(
-                width: 80,
+                width: 100,
                 child: Text(
-                  'Serya 1 sezon 1',
+                  'Серия 1 Сезон 1',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(color: Colors.white, fontSize: 10),
@@ -50,9 +50,9 @@ Widget CardCompMyIvi(Image image) {
               ),
               Spacer(),
               SizedBox(
-                width: 80,
+                width: 100,
                 child: Text(
-                  '0 iz 11 min',
+                  '0 из 11 мин',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(color: Colors.white, fontSize: 10),

@@ -36,8 +36,8 @@ Widget ComponentsIn(InkWell page1, page2) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  child: AccountComp(
-                      'guwanch', Image.asset('assets/icons/ivilogo.png')),
+                  child: AccountComp('guwanch',
+                      Image.asset('assets/icons/ivilogo.png'), Colors.white),
                   onTap: () {
                     page1;
                   },
@@ -51,8 +51,10 @@ Widget ComponentsIn(InkWell page1, page2) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  child: AccountComp('Дети',
-                      Image.asset('assets/images/tri.jpg', fit: BoxFit.cover)),
+                  child: AccountComp(
+                      'Дети',
+                      Image.asset('assets/images/tri.jpg', fit: BoxFit.cover),
+                      Colors.white),
                   onTap: () {
                     page2;
                   },

@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ivi_tv/constants.dart';
 
 // ignore: non_constant_identifier_names
-Widget CardComponents(String title, title1, title2) {
+Widget CardComponents(
+  String title,
+  title1,
+  title2,
+) {
   return Container(
     height: 100,
     width: 270,
