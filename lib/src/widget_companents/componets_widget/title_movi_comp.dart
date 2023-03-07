@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:ivi_tv/src/widget_companents/componets_widget/about_movi.dart';
 import 'package:ivi_tv/src/widget_companents/componets_widget/movi_view_next.dart';
@@ -48,20 +50,19 @@ Widget TitleMovi() {
               const SizedBox(
                 width: 5,
               ),
-              SizedBox(
-                height: 25,
-                width: 50,
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(5)),
-                  child: SizedBox.fromSize(
-                    child: Row(
-                      children: const [
-                        SizedBox(
-                          width: 8,
-                        ),
-                        SizedBox(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                  child: SizedBox(
+                    height: 25,
+                    width: 50,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: SizedBox.fromSize(
+                        child: const Center(
                           child: Text(
                             'FullHD',
                             style: TextStyle(
@@ -69,8 +70,8 @@ Widget TitleMovi() {
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold),
                           ),
-                        )
-                      ],
+                        ),
+                      ),
                     ),
                   ),
                 ),

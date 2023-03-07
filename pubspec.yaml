@@ -19,6 +19,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   hovering: ^1.0.4
   carousel_slider: ^4.2.1
+  glass: ^1.0.1+1
+  
 
 
 

@@ -37,7 +37,7 @@ Widget ComponentsIn(InkWell page1, page2) {
               children: [
                 InkWell(
                   child: AccountComp('guwanch',
-                      Image.asset('assets/icons/ivilogo.png'), Colors.white),
+                      Image.asset('assets/icons/ivilogo.png'), FontWeight.bold),
                   onTap: () {
                     page1;
                   },
@@ -54,7 +54,7 @@ Widget ComponentsIn(InkWell page1, page2) {
                   child: AccountComp(
                       'Дети',
                       Image.asset('assets/images/tri.jpg', fit: BoxFit.cover),
-                      Colors.white),
+                      FontWeight.bold),
                   onTap: () {
                     page2;
                   },

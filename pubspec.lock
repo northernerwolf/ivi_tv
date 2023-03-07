@@ -83,6 +83,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  glass:
+    dependency: "direct main"
+    description:
+      name: glass
+      sha256: "21bc231f98f14be381f0022d99b56326075a3645122c59dc8124c9b8bd9ac337"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1+1"
   hovering:
     dependency: "direct main"
     description:

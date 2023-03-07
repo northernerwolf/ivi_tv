@@ -64,7 +64,7 @@ Widget AboutMovi() {
             child: Text(
               'ТРЕЙЛЕР',
               style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 13,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),

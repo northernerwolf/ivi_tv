@@ -12,20 +12,7 @@ class MyProfilUser extends StatefulWidget {
 }
 
 class _MyProfilUserState extends State<MyProfilUser> {
-  late double _width = 270;
-  late double _height = 100;
-
-  void updateState() {
-    if (_height == 100) {
-      setState(() {
-        _height = 130;
-        _width = 300;
-      });
-    } else {
-      _height = 100;
-      _width = 270;
-    }
-  }
+  bool isColor = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,18 +22,11 @@ class _MyProfilUserState extends State<MyProfilUser> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            InkWell(
-                onTap: () {
-                  updateState();
-                },
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  child: CardComponents(
-                    'Потписки',
-                    'Управлять',
-                    'Есть активные',
-                  ),
-                )),
+            CardComponents(
+              'Потписки',
+              'Управлять',
+              'Есть активные',
+            ),
             const SizedBox(
               width: 20,
             ),

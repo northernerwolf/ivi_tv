@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-Widget AccountComp(String title, Image image, Color color) {
+Widget AccountComp(String title, Image image, FontWeight size) {
   return Column(
     children: [
       SizedBox(
@@ -18,7 +18,7 @@ Widget AccountComp(String title, Image image, Color color) {
           title,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(color: color),
+          style: TextStyle(color: Colors.white, fontWeight: size),
         ),
       )
     ],

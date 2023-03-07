@@ -32,6 +32,11 @@ class _ProfilScreenState extends State<ProfilScreen> {
     });
   }
 
+  var height = 72.0;
+  var width = 50.0;
+  var height1 = 72.0;
+  var width1 = 50.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,11 +80,16 @@ class _ProfilScreenState extends State<ProfilScreen> {
                         children: [
                           GestureDetector(
                             child: AnimatedContainer(
+                              width: paginaAtual == 0 ? width = 55 : width = 50,
+                              height:
+                                  paginaAtual == 0 ? height = 77 : height = 72,
                               duration: const Duration(milliseconds: 200),
                               child: AccountComp(
                                   'guwanch',
                                   Image.asset('assets/icons/ivilogo.png'),
-                                  paginaAtual == 0 ? Colors.red : Colors.white),
+                                  paginaAtual == 0
+                                      ? FontWeight.bold
+                                      : FontWeight.normal),
                             ),
                             onTap: () {
                               pc.animateToPage(0,
@@ -96,11 +106,21 @@ class _ProfilScreenState extends State<ProfilScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
-                            child: AccountComp(
-                                'Дети',
-                                Image.asset('assets/images/tri.jpg',
-                                    fit: BoxFit.cover),
-                                paginaAtual == 1 ? Colors.red : Colors.white),
+                            child: AnimatedContainer(
+                              width:
+                                  paginaAtual == 1 ? width1 = 55 : width1 = 50,
+                              height: paginaAtual == 1
+                                  ? height1 = 77
+                                  : height1 = 72,
+                              duration: const Duration(milliseconds: 200),
+                              child: AccountComp(
+                                  'Дети',
+                                  Image.asset('assets/images/tri.jpg',
+                                      fit: BoxFit.cover),
+                                  paginaAtual == 1
+                                      ? FontWeight.bold
+                                      : FontWeight.normal),
+                            ),
                             onTap: () {
                               pc.animateToPage(1,
                                   duration: const Duration(milliseconds: 400),
