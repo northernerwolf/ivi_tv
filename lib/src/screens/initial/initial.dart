@@ -37,22 +37,25 @@ class _InitialScreenState extends State<InitialScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppConst.settingsColorBacg,
       body: Stack(
         children: [
-          Expanded(
+          SizedBox(
+              width: size.width,
+              height: size.height,
               child: PageView(
-            controller: pc,
-            // ignore: sort_child_properties_last
-            children: const [
-              SearchScreen(),
-              MyIviScreen(),
-              CatigoryScreen(),
-              ProfilScreen()
-            ],
-            onPageChanged: setPaginaActive,
-          )),
+                controller: pc,
+                // ignore: sort_child_properties_last
+                children: const [
+                  SearchScreen(),
+                  MyIviScreen(),
+                  CatigoryScreen(),
+                  ProfilScreen()
+                ],
+                onPageChanged: setPaginaActive,
+              )),
           SizedBox(
             height: 60,
             child: Padding(
