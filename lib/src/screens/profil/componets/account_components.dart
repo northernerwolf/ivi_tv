@@ -8,8 +8,8 @@ Widget AccountComp(String title, Image image, FontWeight size) {
         borderRadius: BorderRadius.circular(10),
         child: Container(
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-          height: 50,
-          width: 50,
+          height: 45,
+          width: 45,
           child: image,
         ),
       ),
@@ -21,8 +21,9 @@ Widget AccountComp(String title, Image image, FontWeight size) {
         child: Text(
           title,
           maxLines: 1,
+          textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(color: Colors.white, fontWeight: size),
+          style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: size),
         ),
       )
     ],

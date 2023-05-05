@@ -21,18 +21,17 @@ class SearchScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        TextButton(
-                          onPressed: () {},
-                          child: SizedBox(
-                            width: 450,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                  labelStyle: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                  labelText: 'Enter Text',
-                                  fillColor: Colors.white),
-                            ),
+                        SizedBox(
+                          width: 450,
+                          child: TextFormField(
+                            style: const TextStyle(color: Colors.white),
+                            autofocus: true,
+                            decoration: const InputDecoration(
+                                labelStyle: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                                labelText: 'Enter Text',
+                                fillColor: Colors.white),
                           ),
                         ),
                         const SizedBox(

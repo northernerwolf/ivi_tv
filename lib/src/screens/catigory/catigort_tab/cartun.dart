@@ -47,6 +47,7 @@ class CartunsScreen extends StatelessWidget {
                           child: InkWell(
                             autofocus: true,
                             focusColor: Colors.red,
+                            borderRadius: BorderRadius.circular(8),
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -95,6 +96,10 @@ class CartunsScreen extends StatelessWidget {
                         child: TextButton(
                           onPressed: () {},
                           style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            )),
                             padding: MaterialStateProperty.all<EdgeInsets>(
                                 const EdgeInsets.all(0)),
                             backgroundColor:

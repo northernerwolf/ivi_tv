@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ivi_tv/constants.dart';
 
 // ignore: non_constant_identifier_names
 Widget CardCompMyIvi(Image image) {
@@ -14,7 +13,7 @@ Widget CardCompMyIvi(Image image) {
             height: 100,
             width: 140,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(0),
+              borderRadius: BorderRadius.circular(8),
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(48),
                 child: image,

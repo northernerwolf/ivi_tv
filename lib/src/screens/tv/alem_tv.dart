@@ -52,6 +52,10 @@ class _AlemTvScreenState extends State<AlemTvScreen>
                           curve: Curves.ease);
                     },
                     style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      )),
                       padding: MaterialStateProperty.all<EdgeInsets>(
                           const EdgeInsets.all(0)),
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
@@ -82,6 +86,10 @@ class _AlemTvScreenState extends State<AlemTvScreen>
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsets>(
                           const EdgeInsets.all(0)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      )),
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (states) {
                           if (states.contains(MaterialState.focused)) {

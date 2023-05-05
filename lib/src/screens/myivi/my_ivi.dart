@@ -91,29 +91,32 @@ class _MyIviScreenState extends State<MyIviScreen> {
                                   },
                                   child: Padding(
                                     padding: const EdgeInsets.only(right: 10),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: TextButton(
-                                        onPressed: () {},
-                                        style: ButtonStyle(
-                                          padding: MaterialStateProperty.all<
-                                                  EdgeInsets>(
-                                              const EdgeInsets.all(0)),
-                                          backgroundColor: MaterialStateProperty
-                                              .resolveWith<Color>(
-                                            (states) {
-                                              if (states.contains(
-                                                  MaterialState.focused)) {
-                                                return Colors.red;
-                                              }
-                                              return AppConst.oceanBlue;
-                                            },
-                                          ),
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      style: ButtonStyle(
+                                        padding: MaterialStateProperty.all<
+                                                EdgeInsets>(
+                                            const EdgeInsets.all(0)),
+                                        shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        )),
+                                        backgroundColor: MaterialStateProperty
+                                            .resolveWith<Color>(
+                                          (states) {
+                                            if (states.contains(
+                                                MaterialState.focused)) {
+                                              return Colors.red;
+                                            }
+                                            return AppConst.oceanBlue;
+                                          },
                                         ),
-                                        child: CardCompMyIvi(Image.asset(
-                                            'assets/images/topgun.png',
-                                            fit: BoxFit.cover)),
                                       ),
+                                      child: CardCompMyIvi(Image.asset(
+                                          'assets/images/topgun.png',
+                                          fit: BoxFit.cover)),
                                     ),
                                   )),
                           separatorBuilder: (context, index) =>
@@ -171,6 +174,7 @@ class _MyIviScreenState extends State<MyIviScreen> {
                                     child: InkWell(
                                       autofocus: true,
                                       focusColor: Colors.red,
+                                      borderRadius: BorderRadius.circular(8),
                                       onTap: () {
                                         Navigator.push(
                                           context,

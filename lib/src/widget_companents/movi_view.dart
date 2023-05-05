@@ -32,11 +32,28 @@ class MoviViewScreen extends StatelessWidget {
           //   ),
           // ),
           TitleMovi(),
-          IconButton(
+          TextButton(
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all<EdgeInsets>(
+                  const EdgeInsets.all(0)),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              )),
+              backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                (states) {
+                  if (states.contains(MaterialState.focused)) {
+                    return Colors.red;
+                  }
+                  return Colors.transparent;
+                },
+              ),
+            ),
+            autofocus: true,
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: const Icon(
+            child: const Icon(
               Icons.arrow_back,
               color: Colors.white,
             ),

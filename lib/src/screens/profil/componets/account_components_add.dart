@@ -7,8 +7,8 @@ Widget AccountCompAdd(String title) {
       Container(
         decoration: BoxDecoration(
             color: Colors.grey, borderRadius: BorderRadius.circular(10)),
-        height: 50,
-        width: 50,
+        height: 45,
+        width: 45,
         child: const Icon(
           Icons.add,
           color: Colors.white,
@@ -23,8 +23,9 @@ Widget AccountCompAdd(String title) {
           title,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
           style: const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.normal),
+              color: Colors.white, fontSize: 12, fontWeight: FontWeight.normal),
         ),
       )
     ],

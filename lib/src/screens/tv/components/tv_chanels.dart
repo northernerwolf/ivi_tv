@@ -29,6 +29,7 @@ class TvChanels extends StatelessWidget {
               child: InkWell(
                 autofocus: true,
                 focusColor: Colors.red,
+                borderRadius: BorderRadius.circular(8),
                 onTap: () {
                   Navigator.push(
                     context,

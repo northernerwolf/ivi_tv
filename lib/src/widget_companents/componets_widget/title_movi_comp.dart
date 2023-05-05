@@ -94,11 +94,47 @@ Widget TitleMovi() {
           AboutMovi(),
           Row(
             children: [
-              MoviViewNext(),
+              TextButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.all(0)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    )),
+                    backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                      (states) {
+                        if (states.contains(MaterialState.focused)) {
+                          return Colors.red;
+                        }
+                        return Colors.transparent;
+                      },
+                    ),
+                  ),
+                  child: MoviViewNext()),
               const SizedBox(
                 width: 10,
               ),
-              ButtonFavorite()
+              TextButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.all(0)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    )),
+                    backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                      (states) {
+                        if (states.contains(MaterialState.focused)) {
+                          return Colors.red;
+                        }
+                        return Colors.transparent;
+                      },
+                    ),
+                  ),
+                  child: ButtonFavorite())
             ],
           )
         ],

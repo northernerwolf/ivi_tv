@@ -97,6 +97,14 @@ class _ProfilScreenState extends State<ProfilScreen> {
                                       curve: Curves.ease);
                                 },
                                 style: ButtonStyle(
+                                  padding:
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          const EdgeInsets.only(top: 5)),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  )),
                                   backgroundColor:
                                       MaterialStateProperty.resolveWith<Color>(
                                     (states) {
@@ -108,18 +116,21 @@ class _ProfilScreenState extends State<ProfilScreen> {
                                     },
                                   ),
                                 ),
-                                child: AccountComp(
-                                    'guwanch',
-                                    Image.asset('assets/icons/ivilogo.png'),
-                                    paginaAtual == 0
-                                        ? FontWeight.bold
-                                        : FontWeight.normal),
+                                child: SizedBox(
+                                  width: 45,
+                                  child: AccountComp(
+                                      'guwanch',
+                                      Image.asset('assets/icons/ivilogo.png'),
+                                      paginaAtual == 0
+                                          ? FontWeight.bold
+                                          : FontWeight.normal),
+                                ),
                               ),
                             ),
                           ],
                         ),
                         const SizedBox(
-                          width: 10,
+                          width: 5,
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -137,6 +148,14 @@ class _ProfilScreenState extends State<ProfilScreen> {
                                       curve: Curves.ease);
                                 },
                                 style: ButtonStyle(
+                                  padding:
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          const EdgeInsets.only(top: 5)),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  )),
                                   backgroundColor:
                                       MaterialStateProperty.resolveWith<Color>(
                                     (states) {
@@ -160,7 +179,7 @@ class _ProfilScreenState extends State<ProfilScreen> {
                           ],
                         ),
                         const SizedBox(
-                          width: 10,
+                          width: 5,
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -173,6 +192,14 @@ class _ProfilScreenState extends State<ProfilScreen> {
                               child: TextButton(
                                   onPressed: () {},
                                   style: ButtonStyle(
+                                    padding:
+                                        MaterialStateProperty.all<EdgeInsets>(
+                                            const EdgeInsets.only(top: 5)),
+                                    shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    )),
                                     backgroundColor: MaterialStateProperty
                                         .resolveWith<Color>(
                                       (states) {

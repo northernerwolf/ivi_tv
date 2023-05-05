@@ -1,3 +1,5 @@
+import 'dart:core';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,8 +8,6 @@ import 'package:ivi_tv/constants.dart';
 import '../catigory/componets_catigory/card_janyr.dart';
 import 'componets/card_component.dart';
 import 'componets/card_componets_2.dart';
-import 'componets/see_after_page.dart';
-import 'componets/settings_page.dart';
 import 'componets/subscription_page.dart';
 
 class MyProfilUser extends StatefulWidget {
@@ -19,6 +19,28 @@ class MyProfilUser extends StatefulWidget {
 
 class _MyProfilUserState extends State<MyProfilUser> {
   bool isColor = false;
+
+  List<String> name = [
+    'Покуки',
+    'Смотреть позже',
+    'Просмотры',
+    'Активация сертификата',
+    'Уведомления',
+    'Способы оплаты',
+    'Настройки',
+    'Add',
+  ];
+
+  List<IconData> icon = [
+    Icons.card_giftcard,
+    CupertinoIcons.bookmark,
+    CupertinoIcons.timer,
+    CupertinoIcons.arrowtriangle_right_square,
+    CupertinoIcons.bell,
+    CupertinoIcons.bitcoin,
+    CupertinoIcons.settings,
+    CupertinoIcons.add,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -123,227 +145,42 @@ class _MyProfilUserState extends State<MyProfilUser> {
             ],
           ),
           const SizedBox(
-            height: 14,
+            height: 24,
           ),
           SizedBox(
             height: 110,
-            child: ListView(scrollDirection: Axis.horizontal, children: [
-              Shortcuts(
-                shortcuts: <LogicalKeySet, Intent>{
-                  LogicalKeySet(LogicalKeyboardKey.select):
-                      const ActivateIntent(),
-                },
-                child: TextButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      )),
-                      padding: MaterialStateProperty.all<EdgeInsets>(
-                          const EdgeInsets.all(0)),
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (states) {
-                          if (states.contains(MaterialState.focused)) {
-                            return Colors.red;
-                          }
-                          return AppConst.oceanBlue;
+            child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => Shortcuts(
+                        shortcuts: <LogicalKeySet, Intent>{
+                          LogicalKeySet(LogicalKeyboardKey.select):
+                              const ActivateIntent(),
                         },
-                      ),
-                    ),
-                    child: CardJanyrListCopm(Icons.card_giftcard, 'Покуки',
-                        isColor ? Colors.white : Colors.red)),
-              ),
-              const SizedBox(
-                width: 9,
-              ),
-              Shortcuts(
-                shortcuts: <LogicalKeySet, Intent>{
-                  LogicalKeySet(LogicalKeyboardKey.select):
-                      const ActivateIntent(),
-                },
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                          builder: (context) => const TVSeeAfterPage(),
-                        ),
-                      );
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (states) {
-                          if (states.contains(MaterialState.focused)) {
-                            return Colors.red;
-                          }
-                          return AppConst.oceanBlue;
-                        },
-                      ),
-                    ),
-                    child: CardJanyrListCopm(
-                        CupertinoIcons.bookmark,
-                        'Смотреть позже',
-                        isColor == true ? Colors.white : Colors.red)),
-              ),
-              const SizedBox(
-                width: 9,
-              ),
-              Shortcuts(
-                shortcuts: <LogicalKeySet, Intent>{
-                  LogicalKeySet(LogicalKeyboardKey.select):
-                      const ActivateIntent(),
-                },
-                child: TextButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (states) {
-                          if (states.contains(MaterialState.focused)) {
-                            return Colors.red;
-                          }
-                          return AppConst.oceanBlue;
-                        },
-                      ),
-                    ),
-                    child: CardJanyrListCopm(CupertinoIcons.timer, 'Просмотры',
-                        isColor == true ? Colors.white : Colors.red)),
-              ),
-              const SizedBox(
-                width: 9,
-              ),
-              Shortcuts(
-                shortcuts: <LogicalKeySet, Intent>{
-                  LogicalKeySet(LogicalKeyboardKey.select):
-                      const ActivateIntent(),
-                },
-                child: TextButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (states) {
-                          if (states.contains(MaterialState.focused)) {
-                            return Colors.red;
-                          }
-                          return AppConst.oceanBlue;
-                        },
-                      ),
-                    ),
-                    child: CardJanyrListCopm(
-                        CupertinoIcons.arrowtriangle_right_square,
-                        'Активация сертификата',
-                        isColor == true ? Colors.white : Colors.red)),
-              ),
-              const SizedBox(
-                width: 9,
-              ),
-              Shortcuts(
-                shortcuts: <LogicalKeySet, Intent>{
-                  LogicalKeySet(LogicalKeyboardKey.select):
-                      const ActivateIntent(),
-                },
-                child: TextButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (states) {
-                          if (states.contains(MaterialState.focused)) {
-                            return Colors.red;
-                          }
-                          return AppConst.oceanBlue;
-                        },
-                      ),
-                    ),
-                    child: CardJanyrListCopm(CupertinoIcons.bell, 'Уведомления',
-                        isColor == true ? Colors.white : Colors.red)),
-              ),
-              const SizedBox(
-                width: 9,
-              ),
-              Shortcuts(
-                shortcuts: <LogicalKeySet, Intent>{
-                  LogicalKeySet(LogicalKeyboardKey.select):
-                      const ActivateIntent(),
-                },
-                child: TextButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (states) {
-                          if (states.contains(MaterialState.focused)) {
-                            return Colors.red;
-                          }
-                          return AppConst.oceanBlue;
-                        },
-                      ),
-                    ),
-                    child: CardJanyrListCopm(
-                        CupertinoIcons.bitcoin,
-                        'Способы оплаты',
-                        isColor == true ? Colors.white : Colors.red)),
-              ),
-              const SizedBox(
-                width: 9,
-              ),
-              Shortcuts(
-                shortcuts: <LogicalKeySet, Intent>{
-                  LogicalKeySet(LogicalKeyboardKey.select):
-                      const ActivateIntent(),
-                },
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                          builder: (context) => TVSettingsPage(),
-                        ),
-                      );
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (states) {
-                          if (states.contains(MaterialState.focused)) {
-                            return Colors.red;
-                          }
-                          return AppConst.oceanBlue;
-                        },
-                      ),
-                    ),
-                    child: CardJanyrListCopm(
-                        CupertinoIcons.settings,
-                        'Настройки',
-                        isColor == true ? Colors.white : Colors.red)),
-              ),
-              const SizedBox(
-                width: 9,
-              ),
-              Shortcuts(
-                shortcuts: <LogicalKeySet, Intent>{
-                  LogicalKeySet(LogicalKeyboardKey.select):
-                      const ActivateIntent(),
-                },
-                child: TextButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (states) {
-                          if (states.contains(MaterialState.focused)) {
-                            return Colors.red;
-                          }
-                          return AppConst.oceanBlue;
-                        },
-                      ),
-                    ),
-                    child: CardJanyrListCopm(CupertinoIcons.add, 'Add',
-                        isColor == true ? Colors.white : Colors.red)),
-              ),
-            ]),
-          )
-          // Row(
-          //   children: [
-          //     CardJanyrListCopm(Icons.settings, 'Детские'),
-          //   ],
-          // ),
+                        child: TextButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              )),
+                              padding: MaterialStateProperty.all<EdgeInsets>(
+                                  const EdgeInsets.all(0)),
+                              backgroundColor:
+                                  MaterialStateProperty.resolveWith<Color>(
+                                (states) {
+                                  if (states.contains(MaterialState.focused)) {
+                                    return Colors.red;
+                                  }
+                                  return AppConst.oceanBlue;
+                                },
+                              ),
+                            ),
+                            child: CardJanyrListCopm(icon[index], name[index],
+                                isColor ? Colors.white : Colors.red))),
+                separatorBuilder: (context, index) => const SizedBox(width: 20),
+                itemCount: name.length),
+          ),
         ],
       ),
     );

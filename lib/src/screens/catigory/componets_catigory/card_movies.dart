@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: non_constant_identifier_names
 Widget CardMovies(String title, name, cost, Image image) {
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Stack(
         children: [
@@ -10,7 +11,7 @@ Widget CardMovies(String title, name, cost, Image image) {
             height: 200,
             width: 155,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(0),
+              borderRadius: BorderRadius.circular(8),
               child: SizedBox.fromSize(
                 size: const Size.fromRadius(48),
                 child: image,
@@ -56,7 +57,7 @@ Widget CardMovies(String title, name, cost, Image image) {
         ],
       ),
       Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(top: 8, bottom: 5),
         child: SizedBox(
           height: 15,
           width: 100,
