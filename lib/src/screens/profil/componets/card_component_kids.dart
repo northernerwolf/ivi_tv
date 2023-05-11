@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 // ignore: non_constant_identifier_names
 Widget CardComponentsKids(String title, title1, title2) {
   return SizedBox(
-    height: 100,
-    width: 580,
+    height: 90,
+    width: 575,
     child: Padding(
       padding: const EdgeInsets.all(15.0),
       child: Column(
