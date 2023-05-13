@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ivi_tv/constants.dart';
@@ -9,7 +10,8 @@ import 'package:ivi_tv/src/widget_companents/componets_widget/movi_view_next.dar
 
 // ignore: non_constant_identifier_names
 class TitleMovi extends StatelessWidget {
-  const TitleMovi({super.key});
+  late ChewieController chewieController;
+  TitleMovi({required this.chewieController, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -110,6 +112,9 @@ class TitleMovi extends StatelessWidget {
                   },
                   child: TextButton(
                       onPressed: () {
+                        if (chewieController.isPlaying) {
+                          chewieController.pause();
+                        }
                         Navigator.push(
                             context,
                             MaterialPageRoute(

@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
+import '../../../../constants.dart';
+import '../../catigory/componets_catigory/card_movies.dart';
+
 class MoviPlayer extends AppBar {
   MoviPlayer({super.key});
 
@@ -14,6 +17,7 @@ class MoviPlayer extends AppBar {
 class _MoviPlayerState extends State<MoviPlayer> {
   late ChewieController _chewieController;
   late VideoPlayerController _videoPlayerController;
+  List<String> quality = ['1080p', '720p', '480p', '360p', '144p'];
   @override
   void initState() {
     _videoPlayerController = VideoPlayerController.asset(
@@ -37,26 +41,7 @@ class _MoviPlayerState extends State<MoviPlayer> {
       showOptions: true,
       zoomAndPan: true,
       aspectRatio: 16 / 9,
-
-      // isLive: true,
-      // allowedScreenSleep: true,
-      // cupertinoProgressColors: ChewieProgressColors(
-      //   playedColor: AppColors.primaryRed,
-      //   backgroundColor: AppColors.priorityGreen,
-      //   bufferedColor: AppColors.grey,
-      //   handleColor: AppColors.priorityOrange,
-      // ),
-      // hideControlsTimer: Duration(seconds: 3),
-      // placeholder: CupertinoActivityIndicator(),
       progressIndicatorDelay: const Duration(seconds: 3),
-      // fullScreenByDefault: ,
-      // controlsSafeAreaMinimum:
-      // EdgeInsets.symmetric(horizontal: 10, vertical: 50),
-      // customControls: CupertinoControls(
-      // backgroundColor: AppColors.,
-      // iconColor: AppColors.priorityGreen,
-      // showPlayButton: true,
-      // ),
     );
     super.initState();
   }
@@ -68,12 +53,16 @@ class _MoviPlayerState extends State<MoviPlayer> {
     super.dispose();
   }
 
+  final controller = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppConst.bg,
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -223,13 +212,53 @@ class _MoviPlayerState extends State<MoviPlayer> {
                                       size: 20,
                                     )),
                               ),
+                              // Shortcuts(
+                              //   shortcuts: <LogicalKeySet, Intent>{
+                              //     LogicalKeySet(LogicalKeyboardKey.select):
+                              //         const ActivateIntent(),
+                              //   },
+                              //   child: TextButton(
+                              //       onPressed: () {},
+                              //       style: ButtonStyle(
+                              //         shape: MaterialStateProperty.all<
+                              //                 RoundedRectangleBorder>(
+                              //             RoundedRectangleBorder(
+                              //           borderRadius:
+                              //               BorderRadius.circular(8.0),
+                              //         )),
+                              //         padding:
+                              //             MaterialStateProperty.all<EdgeInsets>(
+                              //                 const EdgeInsets.all(0)),
+                              //         backgroundColor: MaterialStateProperty
+                              //             .resolveWith<Color>(
+                              //           (states) {
+                              //             if (states.contains(
+                              //                 MaterialState.focused)) {
+                              //               return Colors.red;
+                              //             }
+                              //             return Colors.transparent;
+                              //           },
+                              //         ),
+                              //       ),
+                              //       child: const Icon(
+                              //         Icons.skip_next,
+                              //         color: Colors.white,
+                              //         size: 20,
+                              //       )),
+                              // ),
+                            ],
+                          ),
+                          Row(
+                            children: [
                               Shortcuts(
                                 shortcuts: <LogicalKeySet, Intent>{
                                   LogicalKeySet(LogicalKeyboardKey.select):
                                       const ActivateIntent(),
                                 },
                                 child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showMemberMenu();
+                                    },
                                     style: ButtonStyle(
                                       shape: MaterialStateProperty.all<
                                               RoundedRectangleBorder>(
@@ -251,57 +280,30 @@ class _MoviPlayerState extends State<MoviPlayer> {
                                         },
                                       ),
                                     ),
-                                    child: const Icon(
-                                      Icons.skip_next,
-                                      color: Colors.white,
-                                      size: 20,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3.0),
+                                      child: Row(
+                                        children: const [
+                                          Icon(
+                                            Icons.settings,
+                                            color: Colors.white,
+                                            size: 20,
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              'Качество',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     )),
                               ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              TextButton(
-                                  onPressed: () {},
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    )),
-                                    padding:
-                                        MaterialStateProperty.all<EdgeInsets>(
-                                            const EdgeInsets.all(0)),
-                                    backgroundColor: MaterialStateProperty
-                                        .resolveWith<Color>(
-                                      (states) {
-                                        if (states
-                                            .contains(MaterialState.focused)) {
-                                          return Colors.red;
-                                        }
-                                        return Colors.transparent;
-                                      },
-                                    ),
-                                  ),
-                                  child: Row(
-                                    children: const [
-                                      Icon(
-                                        Icons.settings,
-                                        color: Colors.white,
-                                        size: 20,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 5),
-                                        child: Text(
-                                          'Качество',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ),
-                                    ],
-                                  )),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 5, right: 5),
+                                    const EdgeInsets.only(left: 15, right: 5),
                                 child: TextButton(
                                     onPressed: () {},
                                     style: ButtonStyle(
@@ -333,7 +335,7 @@ class _MoviPlayerState extends State<MoviPlayer> {
                                           size: 20,
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.only(left: 5),
+                                          padding: EdgeInsets.only(left: 8),
                                           child: Text(
                                             'Аудио и Субтитры',
                                             style:
@@ -368,7 +370,7 @@ class _MoviPlayerState extends State<MoviPlayer> {
                                   child: Row(
                                     children: const [
                                       Icon(
-                                        Icons.warning,
+                                        Icons.warning_amber_outlined,
                                         color: Colors.white,
                                         size: 20,
                                       ),
@@ -432,14 +434,339 @@ class _MoviPlayerState extends State<MoviPlayer> {
                         ],
                       ),
                     ),
+                    Center(
+                        child: Shortcuts(
+                      shortcuts: <LogicalKeySet, Intent>{
+                        LogicalKeySet(LogicalKeyboardKey.select):
+                            const ActivateIntent(),
+                      },
+                      child: TextButton(
+                          onPressed: () {
+                            showPopUp();
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            )),
+                            padding: MaterialStateProperty.all<EdgeInsets>(
+                                const EdgeInsets.all(0)),
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                              (states) {
+                                if (states.contains(MaterialState.focused)) {
+                                  return Colors.red;
+                                }
+                                return Colors.transparent;
+                              },
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Column(
+                              children: const [
+                                Text(
+                                  'Похожее',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                Icon(
+                                  CupertinoIcons.chevron_compact_down,
+                                  size: 20,
+                                  color: Colors.white,
+                                )
+                              ],
+                            ),
+                          )),
+                    ))
                   ],
                 )
               ],
             ),
-            TextButton(onPressed: () {}, child: const Text('data'))
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       )),
     );
+  }
+
+  void showPopUp() {
+    showCupertinoModalPopup(
+      context: context,
+      // semanticsDismissible: false,
+      // barrierDismissible: false,
+      // useRootNavigator: false,
+      builder: (context) => Material(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          width: double.maxFinite,
+          decoration: const BoxDecoration(
+            color: AppConst.bg,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 45,
+                color: AppConst.bg.withOpacity(0.3),
+                child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Shortcuts(
+                      shortcuts: <LogicalKeySet, Intent>{
+                        LogicalKeySet(LogicalKeyboardKey.select):
+                            const ActivateIntent(),
+                      },
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          )),
+                          padding: MaterialStateProperty.all<EdgeInsets>(
+                              const EdgeInsets.all(0)),
+                          backgroundColor:
+                              MaterialStateProperty.resolveWith<Color>(
+                            (states) {
+                              if (states.contains(MaterialState.focused)) {
+                                return Colors.red;
+                              }
+                              return Colors.transparent;
+                            },
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Column(
+                            children: const [
+                              Icon(
+                                CupertinoIcons.chevron_compact_up,
+                                size: 20,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                'Вернуться к просмотру',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                    //   IconButton(
+                    //   onPressed: () {
+                    //     Navigator.pop(context);
+                    //   },
+                    //   icon: const Icon(
+                    //     CupertinoIcons.chevron_compact_down,
+                    //     color: AppConst.primaryWhite,
+                    //   ),
+                    // ),
+                    ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 60),
+                child: Text(
+                  'Похожее',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              SizedBox(
+                height: 255,
+                child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) => Shortcuts(
+                            shortcuts: <LogicalKeySet, Intent>{
+                              LogicalKeySet(LogicalKeyboardKey.select):
+                                  const ActivateIntent(),
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: TextButton(
+                                onPressed: () {},
+                                style: ButtonStyle(
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  )),
+                                  padding:
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          const EdgeInsets.all(0)),
+                                  backgroundColor:
+                                      MaterialStateProperty.resolveWith<Color>(
+                                    (states) {
+                                      if (states
+                                          .contains(MaterialState.focused)) {
+                                        return Colors.red;
+                                      }
+                                      return Colors.transparent;
+                                    },
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: CardMovies(
+                                      '12+',
+                                      'Три Богатыря',
+                                      'Подписка Иви',
+                                      Image.asset('assets/images/tri.jpg',
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                            )),
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(width: 20),
+                    itemCount: 10),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void showMemberMenu() async {
+    // PopupMenuButton(itemBuilder: (context) {
+    //   return List.generate(
+    //       5,
+    //       (index) => PopupMenuItem(
+    //             value: index,
+    //             child: Text(
+    //               quality[index],
+    //               style: const TextStyle(
+    //                   fontSize: 15,
+    //                   fontWeight: FontWeight.bold,
+    //                   fontFamily: 'Roboto',
+    //                   color: Colors.white),
+    //             ),
+    //           ));
+    // });
+    await showMenu(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0))),
+      color: AppConst.bg.withOpacity(1),
+      context: context,
+      position: const RelativeRect.fromLTRB(250, 240, 170, 40),
+      items: [
+        const PopupMenuItem(
+          value: 1,
+          child: SizedBox(
+            width: 150,
+            child: Text(
+              "1080p",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                  color: Colors.white),
+            ),
+          ),
+        ),
+        const PopupMenuItem(
+          value: 2,
+          child: SizedBox(
+            width: 150,
+            child: Text(
+              "720p",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                  color: Colors.white),
+            ),
+          ),
+        ),
+        const PopupMenuItem(
+          value: 3,
+          child: SizedBox(
+            width: 150,
+            child: Text(
+              "480p",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                  color: Colors.white),
+            ),
+          ),
+        ),
+        const PopupMenuItem(
+          value: 4,
+          child: SizedBox(
+            width: 150,
+            child: Text(
+              "360p",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                  color: Colors.white),
+            ),
+          ),
+        ),
+        const PopupMenuItem(
+          value: 4,
+          child: SizedBox(
+            width: 150,
+            child: Text(
+              "240p",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                  color: Colors.white),
+            ),
+          ),
+        ),
+        const PopupMenuItem(
+          value: 4,
+          child: SizedBox(
+            width: 150,
+            child: Text(
+              "144p",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                  color: Colors.white),
+            ),
+          ),
+        ),
+        const PopupMenuItem(
+          value: 4,
+          child: SizedBox(
+            width: 150,
+            child: Text(
+              "Auto",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Roboto',
+                  color: Colors.white),
+            ),
+          ),
+        ),
+      ],
+      elevation: 8.0,
+    ).then((value) {
+      if (value != null) print(value);
+    });
   }
 }

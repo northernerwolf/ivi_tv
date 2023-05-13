@@ -26,7 +26,7 @@ class _MoviViewScreenState extends State<MoviViewScreen> {
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController,
       allowFullScreen: true,
-      autoPlay: false,
+      autoPlay: true,
       autoInitialize: true,
       allowMuting: true,
       looping: false,
@@ -37,26 +37,7 @@ class _MoviViewScreenState extends State<MoviViewScreen> {
       showOptions: false,
       zoomAndPan: false,
       aspectRatio: 16 / 9,
-
-      // isLive: true,
-      // allowedScreenSleep: true,
-      // cupertinoProgressColors: ChewieProgressColors(
-      //   playedColor: AppColors.primaryRed,
-      //   backgroundColor: AppColors.priorityGreen,
-      //   bufferedColor: AppColors.grey,
-      //   handleColor: AppColors.priorityOrange,
-      // ),
-      // hideControlsTimer: Duration(seconds: 3),
-      // placeholder: CupertinoActivityIndicator(),
       progressIndicatorDelay: const Duration(seconds: 3),
-      // fullScreenByDefault: ,
-      // controlsSafeAreaMinimum:
-      // EdgeInsets.symmetric(horizontal: 10, vertical: 50),
-      // customControls: CupertinoControls(
-      // backgroundColor: AppColors.,
-      // iconColor: AppColors.priorityGreen,
-      // showPlayButton: true,
-      // ),
     );
     super.initState();
   }
@@ -90,7 +71,9 @@ class _MoviViewScreenState extends State<MoviViewScreen> {
           //   ),
           // ),
 
-          const TitleMovi(),
+          TitleMovi(
+            chewieController: _chewieController,
+          ),
           TextButton(
             style: ButtonStyle(
               padding: MaterialStateProperty.all<EdgeInsets>(
